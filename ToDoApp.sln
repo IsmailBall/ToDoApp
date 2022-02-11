@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.MVC", "ToDoApp.MVC\ToDoApp.MVC.csproj", "{AF7C6E7F-80C2-4B3B-80D8-7EFE3EA6BD2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.MVC", "ToDoApp.MVC\ToDoApp.MVC.csproj", "{AF7C6E7F-80C2-4B3B-80D8-7EFE3EA6BD2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Dal", "ToDoApp.Dal\ToDoApp.Dal.csproj", "{8512D382-55E7-4034-BEBD-62225F92AC73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Dal", "ToDoApp.Dal\ToDoApp.Dal.csproj", "{8512D382-55E7-4034-BEBD-62225F92AC73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Business", "ToDoApp.Business\ToDoApp.Business.csproj", "{2B836204-2B78-4CB2-A6DB-340F5A4CDE63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Business", "ToDoApp.Business\ToDoApp.Business.csproj", "{2B836204-2B78-4CB2-A6DB-340F5A4CDE63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Entities", "ToDoApp.Entities\ToDoApp.Entities.csproj", "{7F114CCB-7039-4E48-9659-611BD4790B03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Entities", "ToDoApp.Entities\ToDoApp.Entities.csproj", "{7F114CCB-7039-4E48-9659-611BD4790B03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreenShot", "ScreenShot", "{8B8B9D7C-5402-42BD-A198-EFA7E6519C57}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\ToDo.PNG = ..\..\..\Desktop\ToDo.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
