@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ToDoApp.MVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Scripts",false)
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand text-dark">To Do' s App</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="p-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bg-light">
+        <div class="container">
+            &copy; 2022 -            ToDoApp.MVC 
+        </div>
+    </footer>
+</body>
+</html>

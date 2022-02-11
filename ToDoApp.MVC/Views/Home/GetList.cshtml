@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Work>
+@section Scripts
+{
+    <script src="@Url.Content("~/js/Custom.js")"></script>
+}
+<div class="row">
+    <div class="col-4">
+        <div class="d-grid gap-2 pb-3">
+            <form asp-action="Add" asp-controller="Work" method="get"><button class="btn btn-outline-primary" type="submit">Add Work</button></form>
+        </div>
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">Works Are Done</div>
+            <div class="card-body" id="complated">
+                <h5 class="card-title">Successful card</h5>
+                @foreach (var work in Model)
+                {
+                    if (work.IsCompleted)
+                    {
+                        <p class="card-text">✓✓ @work.Defination</p>
+                    }
+                }
+            </div>
+        </div>
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+            <div class="card-header">Works Aren't Done</div>
+            <div class="card-body" id="uncomplated">
+                <h5 class="card-title">UnSuccess Card</h5>
+                @foreach (var work in Model)
+                {
+                    if (!work.IsCompleted)
+                    {
+                        <p class="card-text">!!! @work.Defination</p>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h4 class="text-center text-secondary">Works</h4>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Defination</th>
+                    <th scope="col">Is Finished</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var work in Model)
+                {
+                    <tr>
+                        <th scope="row">@Model.IndexOf(work)</th>
+                        <td>@work.Defination</td>
+                        <td>@work.IsCompleted</td>
+                        <td><form asp-action="Update" asp-controller="Work" asp-route-id="@work.Id" method="get"><button type="submit" class="btn btn-info ModifyCard">Update</button></form></td>
+                        <td><form asp-action="Remove" asp-controller="Work" asp-route-id="@work.Id" method="get"><button type="submit" class="btn btn-danger ModifyCard">Remove</button></form></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
