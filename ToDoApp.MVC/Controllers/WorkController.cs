@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using ToDoApp.Business.Abstract;
 using ToDoApp.Entities.Concrete;
@@ -13,6 +14,7 @@ namespace ToDoApp.MVC.Controllers
         {
             _workService = workService;
         }
+        [Authorize]
         public IActionResult Add()
         {
             return View(new Work());
@@ -24,6 +26,7 @@ namespace ToDoApp.MVC.Controllers
             await _workService.Add(work);
             return RedirectToAction("GetList","Home");
         }
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Remove(int id)
         {
@@ -34,6 +37,7 @@ namespace ToDoApp.MVC.Controllers
             }
             return RedirectToAction("GetList","Home");
         }
+        [Authorize]
         public async Task<IActionResult> Update(int id)
         {
             var updatedWorkResult = await _workService.Get(id);

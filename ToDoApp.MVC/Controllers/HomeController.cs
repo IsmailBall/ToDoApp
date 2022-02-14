@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ToDoApp.Business.Abstract;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ToDoApp.MVC.Controllers
 {
@@ -12,10 +13,12 @@ namespace ToDoApp.MVC.Controllers
         {
             _workService = workService;
         }
-
-        public async Task<IActionResult> GetList()
+        [Authorize(Roles = "Member")]
+        public async Task<IActionResult> GetList(string url)
         {
             var result = await _workService.GetAll();
+            //var x = User.Identity.Name;
+            //var y = HttpContext.User.Identity.Name;
             return View(result.Data);
         }
 
